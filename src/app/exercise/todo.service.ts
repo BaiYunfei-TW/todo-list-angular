@@ -24,4 +24,8 @@ export class TodoService {
   getHeroes (): Observable<TodoItem[]> {
     return this.http.get<TodoItem[]>(this.todoUrl);
   }
+
+  updateItem(item: TodoItem) {
+    return this.http.put<TodoItem>(`${this.todoUrl}/${item.id}`, item);
+  }
 }

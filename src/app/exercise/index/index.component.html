@@ -10,7 +10,7 @@
   <section class="todo-list">
     <ul>
       <li *ngFor="let item of todos">
-        <input type="checkbox" class="toggle-button" (change)="toggleCheck(item)" [checked]="item.checked" />
+        <input type="checkbox" class="toggle-button" (change)="toggleCheck(item)" [(ngModel)]="item.checked" />
         <label [class.checked-item]="item.checked">{{item.value}}</label>
         <button class="remove-item-button" (click)="deleteItem(item.id)"></button>
       </li>

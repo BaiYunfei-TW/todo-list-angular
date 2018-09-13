@@ -117,4 +117,5 @@ main {
 
 .checked-item {
   text-decoration: line-through;
+  color: #e6e6e6;
 }

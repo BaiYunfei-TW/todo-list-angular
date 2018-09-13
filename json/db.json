@@ -9,6 +9,11 @@
       "id": 2,
       "value": "todo item 2",
       "checked": false
+    },
+    {
+      "value": "123",
+      "checked": false,
+      "id": 3
     }
   ]
 }

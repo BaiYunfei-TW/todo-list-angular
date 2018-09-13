@@ -25,7 +25,7 @@ export class IndexComponent implements OnInit {
   }
 
   toggleCheck(item) {
-    item.checked = !item.checked;
+    this.todoService.updateItem(item).subscribe(_item => item.checked = _item.checked);
   }
 
   addItem() {
