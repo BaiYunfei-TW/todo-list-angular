@@ -36,10 +36,10 @@ li label,input[type=text] {
 }
 
 li input[type=text] {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
   font-size: 24px;
   font-weight: 200;
   border: 0;
-  letter-spacing: 1px;
 }
 
 li .remove-item-button {
