@@ -12,6 +12,8 @@ export class IndexComponent implements OnInit {
     { 'id': 2, 'value': 'todo item 2', 'checked': true }
     ];
 
+  input = '';
+
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +26,15 @@ export class IndexComponent implements OnInit {
 
   toggleCheck(item) {
     item.checked = !item.checked;
+  }
+
+  addItem() {
+    this.todos.push({
+      'id': 3,
+      'value': this.input,
+      'checked': false
+    });
+    this.input = '';
   }
 
 }

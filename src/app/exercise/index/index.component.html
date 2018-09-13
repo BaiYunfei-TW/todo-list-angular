@@ -4,7 +4,7 @@
 
 <main>
   <section class="new-todo">
-    <input name="new-todo" class="new-todo-input" autofocus placeholder="What needs to be done?" />
+    <input name="new-todo" class="new-todo-input" autofocus (keyup.enter)="addItem()" [(ngModel)]="input" placeholder="What needs to be done?" />
   </section>
 
   <section class="todo-list">
