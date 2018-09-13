@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoService} from '../todo.service';
+import TodoItem from '../TodoItem';
 
 @Component({
   selector: 'app-exercise-index',
@@ -7,17 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  todos = [
-    { 'id': 1, 'value': 'todo item 1', 'checked': false },
-    { 'id': 2, 'value': 'todo item 2', 'checked': true }
-    ];
+  todos: TodoItem[] = [];
 
   input = '';
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-
+    this.todoService.getHeroes().subscribe(todos => this.todos = todos);
   }
 
   countItemLeft() {
