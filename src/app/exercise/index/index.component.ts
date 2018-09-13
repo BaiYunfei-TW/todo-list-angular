@@ -18,4 +18,12 @@ export class IndexComponent implements OnInit {
 
   }
 
+  countItemLeft() {
+    return this.todos.filter(item => !item.checked).length;
+  }
+
+  toggleCheck(item) {
+    item.checked = !item.checked;
+  }
+
 }
