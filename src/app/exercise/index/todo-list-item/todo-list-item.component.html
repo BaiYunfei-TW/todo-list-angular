@@ -1,5 +1,8 @@
 <li>
-  <input type="checkbox" class="toggle-button" (change)="updateItem(item)" [(ngModel)]="item.checked" />
+  <input type="checkbox"
+         class="toggle-button"
+         (change)="updateItem()"
+         [(ngModel)]="item.checked" />
   <label [class.checked-item]="item.checked"
          (dblclick)="toggleEditMode()"
          *ngIf="!editMode">
@@ -8,10 +11,11 @@
   <input type="text"
          [(ngModel)]="item.value"
          *ngIf="editMode"
-         (blur)="updateItem(item)"
-         (keyup.enter)="updateItem(item)"
+         (blur)="updateItem()"
+         (keyup.enter)="updateItem()"
+         (keyup.esc)="updateItem()"
          id="value-field">
   <button class="remove-item-button"
-          (click)="deleteItem(item.id)">
+          (click)="deleteItem()">
   </button>
 </li>
