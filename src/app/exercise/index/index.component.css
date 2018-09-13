@@ -59,7 +59,7 @@ main {
   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
 }
 
-.todo-list li label {
+.todo-list li label,input[type=text] {
   white-space: pre-line;
   word-break: break-all;
   padding: 15px 60px 15px 15px;
@@ -67,6 +67,13 @@ main {
   display: block;
   line-height: 1.2;
   transition: color 0.4s;
+}
+
+.todo-list li input[type=text] {
+  font-size: 24px;
+  font-weight: 200;
+  border: 0;
+  letter-spacing: 1px;
 }
 
 .todo-list li .remove-item-button {
