@@ -1,0 +1,6 @@
+<li>
+  <input type="checkbox" class="toggle-button" (change)="updateItem(item)" [(ngModel)]="item.checked" />
+  <label [class.checked-item]="item.checked" (dblclick)="editMode = !editMode" *ngIf="!editMode">{{item.value}}</label>
+  <input type="text" [(ngModel)]="item.value" *ngIf="editMode" (blur)="updateItem(item)" (keyup.enter)="updateItem(item)" >
+  <button class="remove-item-button" (click)="deleteItem(item.id)"></button>
+</li>

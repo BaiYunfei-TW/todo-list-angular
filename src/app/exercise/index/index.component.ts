@@ -24,20 +24,14 @@ export class IndexComponent implements OnInit {
     return this.todos.filter(item => !item.checked).length;
   }
 
-  updateItem(item) {
-    item.edit = false;
-    this.todoService.updateItem(item).subscribe(_item => item.checked = _item.checked);
-  }
-
   addItem() {
     this.todoService.saveItem({'value': this.input, 'checked': false} as TodoItem)
       .subscribe(item => this.todos.push(item as TodoItem));
     this.input = '';
   }
 
-  deleteItem(id) {
-    this.todoService.deleteItem(id).subscribe(_ => {
-      this.todos = this.todos.filter(item => item.id !== id);
-    });
+  onChildDeleted(deletedItem) {
+    this.todos = this.todos.filter(item => item.id !== deletedItem.id);
   }
+
 }
