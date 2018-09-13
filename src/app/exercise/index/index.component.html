@@ -9,14 +9,9 @@
 
   <section class="todo-list">
     <ul>
-      <li>
-        <input type="checkbox" class="toggle-button" />
-        <label>todo item 1</label>
-        <button class="remove-item-button"></button>
-      </li>
-      <li>
-        <input type="checkbox" class="toggle-button" />
-        <label>todo item 2</label>
+      <li *ngFor="let item of todos">
+        <input type="checkbox" class="toggle-button" [checked]="item.checked" />
+        <label>{{item.value}}</label>
         <button class="remove-item-button"></button>
       </li>
     </ul>
