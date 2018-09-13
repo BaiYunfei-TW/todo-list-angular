@@ -28,11 +28,8 @@ export class IndexComponent implements OnInit {
   }
 
   addItem() {
-    this.todos.push({
-      'id': 3,
-      'value': this.input,
-      'checked': false
-    });
+    this.todoService.saveItem({'value': this.input, 'checked': false} as TodoItem)
+                    .subscribe(item => this.todos.push(item as TodoItem));
     this.input = '';
   }
 
