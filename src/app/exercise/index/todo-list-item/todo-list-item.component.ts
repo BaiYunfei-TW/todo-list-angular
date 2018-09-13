@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import TodoItem from '../../TodoItem';
 import {TodoService} from '../../todo.service';
 
@@ -14,7 +14,8 @@ export class TodoListItemComponent implements OnInit {
 
   editMode = false;
 
-  constructor(private todoService: TodoService) {
+  constructor(private todoService: TodoService,
+              private elementRef: ElementRef) {
 
   }
 
@@ -30,6 +31,15 @@ export class TodoListItemComponent implements OnInit {
     this.todoService.deleteItem(this.item.id).subscribe(_ => {
       this.onDeleteItem.emit(this.item);
     });
+  }
+
+  toggleEditMode() {
+    this.editMode = !this.editMode;
+    if (this.editMode) {
+      setTimeout(() => {
+        this.elementRef.nativeElement.querySelector('#value-field').focus();
+      }, 0);
+    }
   }
 
 }
