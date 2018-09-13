@@ -17,6 +17,10 @@ export class TodoService {
     return this.http.post(this.todoUrl, item);
   }
 
+  deleteItem(id: number) {
+    return this.http.delete(`${this.todoUrl}/${id}`);
+  }
+
   getHeroes (): Observable<TodoItem[]> {
     return this.http.get<TodoItem[]>(this.todoUrl);
   }

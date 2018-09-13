@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TodoService} from '../todo.service';
 import TodoItem from '../TodoItem';
 
@@ -13,7 +13,8 @@ export class IndexComponent implements OnInit {
 
   input = '';
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService) {
+  }
 
   ngOnInit() {
     this.todoService.getHeroes().subscribe(todos => this.todos = todos);
@@ -29,8 +30,13 @@ export class IndexComponent implements OnInit {
 
   addItem() {
     this.todoService.saveItem({'value': this.input, 'checked': false} as TodoItem)
-                    .subscribe(item => this.todos.push(item as TodoItem));
+      .subscribe(item => this.todos.push(item as TodoItem));
     this.input = '';
   }
 
+  deleteItem(id) {
+    this.todoService.deleteItem(id).subscribe(_ => {
+      this.todos = this.todos.filter(item => item.id !== id);
+    });
+  }
 }
