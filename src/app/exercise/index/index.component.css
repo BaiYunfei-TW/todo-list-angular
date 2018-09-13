@@ -114,3 +114,7 @@ main {
   0 16px 0 -6px #f6f6f6,
   0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
+
+.checked-item {
+  text-decoration: line-through;
+}
