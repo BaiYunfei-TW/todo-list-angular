@@ -3,11 +3,11 @@ const colors = require('colors');
 const PROXY_CONFIG_MAP = {
   local: {
     '/api': {
-      target: 'http://localhost:3000',
+      target: 'http://localhost:8080',
       secure: false,
-      pathRewrite: {
-        '^/api': ''
-      },
+      // pathRewrite: {
+      //   '^/api': ''
+      // },
       changeOrigin: true
     }
   }

@@ -9,7 +9,7 @@ import {t} from '@angular/core/src/render3';
 })
 export class TodoService {
 
-  private todoUrl = 'http://localhost:3000/api/todos';
+  private todoUrl = 'http://localhost:4200/api/todos';
 
   constructor(private http: HttpClient) { }
 

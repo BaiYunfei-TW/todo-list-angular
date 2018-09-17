@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": 1,
-      "value": "new item 12312",
+      "value": "new item 12312123",
       "checked": false,
       "edit": false
     },
@@ -22,6 +22,16 @@
       "value": "123123",
       "checked": false,
       "id": 4
+    },
+    {
+      "value": "12313",
+      "checked": false,
+      "id": 5
+    },
+    {
+      "value": "123123",
+      "checked": false,
+      "id": 6
     }
   ]
 }
